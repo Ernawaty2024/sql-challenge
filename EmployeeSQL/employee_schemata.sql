@@ -6,6 +6,9 @@ CREATE TABLE titles (
     PRIMARY KEY (title_id)
 );
 
+-- Import file from titles.csv file
+
+-- Show the output table
 SELECT *
 FROM titles 
 LIMIT 5
@@ -17,6 +20,9 @@ CREATE TABLE departments (
     PRIMARY KEY (dept_no)
 );
 
+-- Import file from departments.csv file
+
+-- Show the output table
 SELECT *
 FROM departments 
 LIMIT 5
@@ -33,6 +39,8 @@ CREATE TABLE employees (
     PRIMARY KEY (emp_no),
 	FOREIGN KEY (emp_title_id) REFERENCES titles (title_id)
 );
+
+-- import table from employees.csv file
 
 -- Convert birth_date and hire_date VARCHAR datatype columns to DATE datatype
 -- Add new columns with DATE type
@@ -52,6 +60,7 @@ ALTER TABLE employees DROP COLUMN hire_date;
 ALTER TABLE employees rename COLUMN birth_date_temp TO birth_date;
 ALTER TABLE employees rename COLUMN hire_date_temp TO hire_date;
 
+-- Show the output table
 SELECT *
 FROM employees
 LIMIT 5
@@ -65,6 +74,9 @@ CREATE TABLE dept_emp (
     FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
 );
 
+-- Import file from dept_emp.csv file
+
+-- Show the output table
 SELECT *
 FROM dept_emp
 LIMIT 5
@@ -77,6 +89,9 @@ CREATE TABLE dept_manager (
     FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
+-- Import file from dept_manager.csv file
+
+-- Show the output table
 SELECT *
 FROM dep_manager
 LIMIT 5
@@ -88,6 +103,9 @@ CREATE TABLE salaries (
     FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
+-- Import file from salaries.csv file
+
+-- Show the output table
 SELECT *
 FROM salaries 
 LIMIT 5
